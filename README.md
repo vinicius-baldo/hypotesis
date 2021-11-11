@@ -11,3 +11,13 @@ so this is why i did this way.
 create a new one with that information 
 
 3 - While it was not specified on the document, I decided to not allow a transaction from a user to itself
+
+4 - To run, execute python3 manage.py runserver, this will enable the application at http://127.0.0.1:8000/
+
+5 - It is possible to run some test using only the web interface. 
+    Opening http://127.0.0.1:8000/ledger/transaction/process/ will bring a web interface to send the data.
+    To create a Transaction add to the content field {"transaction": "2015-01-16,john,mary,125.00"}
+    To recover data from a user to a certain data use http://127.0.0.1:8000/ledger/transaction/<username>/<date>/
+    as in http://127.0.0.1:8000/ledger/transaction/john/2021-11-11/
+
+6 - Still planning on creating some automatic tests to check data
