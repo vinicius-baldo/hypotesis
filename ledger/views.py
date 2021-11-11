@@ -28,7 +28,4 @@ class ProcessTransaction(APIView):
             data=response_data,
         )
 
-
-        payload = {"transaction":"2015-01-16,john,mary,125.00"}
-        url = "http://127.0.0.1:8000/ledger/processtransaction/"
-        response = requests.post(url, json=payload)
+        
