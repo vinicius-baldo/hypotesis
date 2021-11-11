@@ -10,4 +10,4 @@ so this is why i did this way.
 2 - The decision was made to consider if a username is sent on a transaction, the system should try to recover that user and if does not exists, 
 create a new one with that information 
 
-3 - While it was not specicied on the document, I decided to not allow a transaction from a user to itself
+3 - While it was not specified on the document, I decided to not allow a transaction from a user to itself
