@@ -57,7 +57,7 @@ class TransactionClient:
         try:
             validated_date = datetime.strptime(date, '%Y-%m-%d').date()
         except Exception:
-            data = {"message": "incorrect date format"}
+            data = {"message": "Incorrect date format"}
             return status.HTTP_400_BAD_REQUEST, data
 
         # To keep it simple lets accept John == john and .lower() everything
@@ -67,13 +67,17 @@ class TransactionClient:
 
         if user_from == user_to:
             data = {"message": "Users must be different"}
-            return status.HTTP_400_BAD_REQUEST, data
+            return status.HTTP_400_BAD_REQUEST, data     
 
         try:
             validated_amount = float(amount)
         except ValueError:
-            data = {"message": "incorrect amount format"}
+            data = {"message": "Incorrect amount format"}
             return status.HTTP_400_BAD_REQUEST, data
+
+        if validated_amount <= 0.0:
+            data = {"message": "Amount should be positive"}
+            return status.HTTP_400_BAD_REQUEST, data      
 
         # If the user does not exists lets create one
         try:
@@ -88,7 +92,7 @@ class TransactionClient:
             to_user = User(username=user_to)
             to_user.save()
 
-        #Everything ok, lets save the transaction
+        # Everything ok, lets save the transaction
         tran = Transaction(date=validated_date, from_user=from_user, to_user=to_user, amount=validated_amount)
         tran.save()
         data = {"message": "Transaction sucessfull"}
