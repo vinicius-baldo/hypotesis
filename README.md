@@ -20,5 +20,4 @@ create a new one with that information. I used django User model for this. On a 
     To recover data from a user to a certain data use http://127.0.0.1:8000/ledger/transaction/<username>/<date>/
     as in http://127.0.0.1:8000/ledger/transaction/john/2021-11-11/
 
-6 - Automated tests can be run using python3 manage.py test. I created one test that does multiple assertions. On a production enviroment
-    it would be better to break them and test each feature on its on testcase.
+6 - Automated tests can be run using python3 manage.py test.
