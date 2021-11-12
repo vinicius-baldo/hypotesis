@@ -1,4 +1,4 @@
-# hypotesis
+# Hypotesis
 For the assessment and the interview.
 
 Some explanation on why I made some decisions
